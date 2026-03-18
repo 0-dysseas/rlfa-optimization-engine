@@ -20,3 +20,28 @@ The engine includes a custom parsing class designed to read standard RLFAP `.txt
 * `varX.txt`: Variable definitions.
 * `domX.txt`: Frequency domain arrays.
 * `ctrX.txt`: The network interference constraints (>, =, <=).
+
+## 🗄️ Available Instances
+The `data/rlfap` directory contains the raw CELAR instances. You can pass these IDs directly into the CLI. 
+
+* **Available IDs:** `2-f24`, `2-f25`, `3-f10`, `3-f11`, `6-w2`, `7-w1-f4`, `7-w1-f5`, `8-f10`, `8-f11`, `11`, `14-f27`, `14-f28`
+* *(Note: Execution time scales non-linearly with constraint density. Instance 11 is recommended for standard benchmarking).*
+
+## 🚀 Execution Instructions
+
+### Prerequisites
+* Python 3.8+
+* A native Linux environment (or WSL) is highly recommended for accurate CPU-cycle profiling. No external dependencies or `pip` installs are required.
+
+### Command Line Interface (CLI)
+The engine is operated entirely via the terminal. 
+
+**View the Help Menu:**
+```bash
+python3 rlfa_solver.py -h
+
+# Run the default benchmark (Instance 11)
+python3 rlfa_solver.py
+
+# Run a custom target (e.g., Instance 8-f10)
+python3 rlfa_solver.py -i 8-f10
